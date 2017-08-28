@@ -1,4 +1,5 @@
 var mongoose = require('mongoose')
+mongoose.Promise = global.Promise
 
 var recipeSchema = new mongoose.Schema({
     name: String,
