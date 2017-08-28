@@ -50,6 +50,16 @@ function recipesController (app) {
                 res.send(rawResponse)
         })
     })
+
+    app.delete('/recipes/:recipeId', function(req, res){
+        Recipe.remove({_id: req.params.recipeId}, function(error, rawResponse){
+            if (error) {
+                res.send({ error: 'Unable to remove recipe'})
+                return
+            }
+            res.send(rawResponse)
+        })
+    })
 }
 
 module.exports = recipesController
